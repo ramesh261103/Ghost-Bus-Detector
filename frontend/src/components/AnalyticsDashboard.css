@@ -1,0 +1,322 @@
+.analytics-dashboard {
+  width: 320px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #333;
+  padding: 25px 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-radius: 14px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-y: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.dashboard-title {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2c3e50;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  user-select: none;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.status-card,
+.legend-card,
+.analytics-card,
+.info-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border: 1px solid #e1e4e8;
+  transition: box-shadow 0.3s ease;
+}
+
+.status-card:hover,
+.legend-card:hover,
+.analytics-card:hover,
+.info-card:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.status-card h3,
+.legend-card h3,
+.analytics-card h3,
+.info-card h3 {
+  margin-top: 0;
+  margin-bottom: 14px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #34495e;
+  user-select: none;
+}
+
+.status-text {
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.03em;
+  margin-bottom: 6px;
+}
+
+.status-text.connected {
+  color: #27ae60;
+  text-shadow: 0 0 6px #27ae60aa;
+}
+
+.status-text.disconnected {
+  color: #e74c3c;
+  text-shadow: 0 0 6px #e74c3caa;
+}
+
+.last-updated {
+  font-size: 0.95rem;
+  opacity: 0.7;
+  font-style: italic;
+  user-select: none;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  cursor: default;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.legend-item:hover {
+  color: #2980b9;
+}
+
+.legend-icon {
+  margin-right: 14px;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #bdc3c7;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  user-select: none;
+}
+
+.legend-icon.healthy {
+  background-color: #27ae60;
+  box-shadow: 0 0 8px #27ae60aa;
+}
+
+.legend-icon.ghost {
+  background-color: #e74c3c;
+  box-shadow: 0 0 8px #e74c3caa;
+}
+
+.legend-item.total {
+  border-top: 1px solid #dcdde1;
+  padding-top: 12px;
+  margin-top: 12px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #34495e;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  user-select: none;
+}
+
+.stat-value {
+  font-weight: 700;
+  color: #f39c12;
+  text-shadow: 0 0 6px #f39c12aa;
+}
+
+.info-card p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #7f8c8d;
+  user-select: none;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.dark-mode-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+/* Dark Mode Styles */
+.app-container.dark {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: #e0e0e0;
+}
+
+.app-container.dark .analytics-dashboard {
+  background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+  color: #e0e0e0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.app-container.dark .dashboard-title {
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.app-container.dark .status-card,
+.app-container.dark .legend-card,
+.app-container.dark .analytics-card,
+.app-container.dark .info-card,
+.app-container.dark .timings-card {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #e0e0e0;
+  border: 1px solid #2c3e50;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.app-container.dark .status-card h3,
+.app-container.dark .legend-card h3,
+.app-container.dark .analytics-card h3,
+.app-container.dark .info-card h3,
+.app-container.dark .timings-card h3 {
+  color: #ffffff;
+}
+
+.app-container.dark .status-text.connected {
+  color: #27ae60;
+  text-shadow: 0 0 8px #27ae60aa;
+}
+
+.app-container.dark .status-text.disconnected {
+  color: #e74c3c;
+  text-shadow: 0 0 8px #e74c3caa;
+}
+
+.app-container.dark .legend-item {
+  color: #e0e0e0;
+}
+
+.app-container.dark .legend-item:hover {
+  color: #3498db;
+}
+
+.app-container.dark .stat-value {
+  color: #f39c12;
+  text-shadow: 0 0 8px #f39c12aa;
+}
+
+.app-container.dark .timing-value.countdown {
+  color: #e74c3c;
+  text-shadow: 0 0 8px #e74c3caa;
+}
+
+.app-container.dark .info-card p {
+  color: #bdc3c7;
+}
+
+.app-container.dark .app-header {
+  background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+  color: #ffffff;
+}
+
+.timings-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 12px;
+  padding: 18px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border: 1px solid #e1e4e8;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.timings-card:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+}
+
+.timings-card h3 {
+  margin-top: 0;
+  margin-bottom: 14px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  user-select: none;
+}
+
+.timing-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f0f0f0;
+  user-select: none;
+}
+
+.timing-label {
+  flex: 1;
+}
+
+.timing-value {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.timing-value.countdown {
+  color: #ffeb3b;
+  animation: pulse 1s infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
