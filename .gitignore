@@ -210,8 +210,3 @@ logs
 # IDE
 .vscode/
 .idea/
-
-# Database
-*.db
-*.sqlite
-*.sqlite3
