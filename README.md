@@ -63,15 +63,13 @@ cd Ghost-Bus-Detector
 
 2️⃣ Start the Backend
 cd backend
-pip install -r requirements.txt
-python server.py
+python -m uvicorn main:app --reload
 
 
 👉 Runs at http://localhost:8000
 
 3️⃣ Start the Frontend
 cd frontend
-npm install
 npm start
 
 
@@ -96,32 +94,6 @@ Select a city from the dropdown to switch GTFS-RT feeds.
 
 Data refreshes every 3 seconds via WebSocket.
 
-📡 API Endpoints
-
-GET /cities → List available cities.
-
-GET /buses?city= → Get bus data for a city.
-
-WebSocket /ws → Real-time bus updates.
-
-🤝 Contributing
-
-Fork this repo.
-
-Create a feature branch:
-
-git checkout -b feature/your-feature
-
-
-Commit your changes:
-
-git commit -m "Add your feature"
-
-
-Push branch:
-
-git push origin feature/your-feature
-
 
 Open a Pull Request.
 
@@ -129,6 +101,7 @@ Open a Pull Request.
 
 This project is licensed under the MIT License – see the LICENSE
  file.
+
 
 🔮 Future Enhancements
 
@@ -141,4 +114,5 @@ Improve prediction with machine learning.
 Add user authentication & personalized alerts.
 
 Docker/Kubernetes deployment for production.
+
 
