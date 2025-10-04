@@ -58,61 +58,43 @@ ghost-bus-detector/
 └── .gitignore               # Root ignores
 
 1️⃣ Clone the Repository
-git clone https://github.com/your-username/Ghost-Bus-Detector.git
+git clone https://github.com/ramesh261103/Ghost-Bus-Detector.git
 cd Ghost-Bus-Detector
 
 2️⃣ Start the Backend
 cd backend
 python -m uvicorn main:app --reload
-
-
 👉 Runs at http://localhost:8000
 
 3️⃣ Start the Frontend
 cd frontend
 npm start
-
-
 👉 Runs at http://localhost:3000
 
 4️⃣ Open the App
-
 Go to http://localhost:3000
  in your browser.
 
 🎯 Usage
-
 Select a city from the dropdown to switch GTFS-RT feeds.
 
 🟢 Green buses → Healthy
-
 🔴 Red buses → Ghost
-
 📊 Analytics dashboard → Counts & alerts
-
 🔔 Notifications for delays and anomalies
-
 Data refreshes every 3 seconds via WebSocket.
 
 
 Open a Pull Request.
-
 📜 License
-
 This project is licensed under the MIT License – see the LICENSE
- file.
+file.
 
 
 🔮 Future Enhancements
 
 Add more GTFS-RT city feeds.
-
 Integrate real crowding data from sensors.
-
 Improve prediction with machine learning.
-
 Add user authentication & personalized alerts.
-
 Docker/Kubernetes deployment for production.
-
-
