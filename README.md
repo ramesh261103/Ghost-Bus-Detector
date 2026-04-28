@@ -1,4 +1,4 @@
-# 🚍 Ghost Bus Detector  
+# 🚍 Ghost Bus Detector 
 
 A real-time bus tracking system that detects and alerts on **"ghost buses"** – anomalies in public transit data such as stale GPS signals, impossible location jumps, or buses stationary for too long.  
 
